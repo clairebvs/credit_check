@@ -28,4 +28,16 @@ class CreditCheckTest < Minitest::Test
 
     assert_equal [3, 8, 5, 0, 5, 4, 7, 5, 4, 1, 3, 5, 9, 4, 9, 8], credit.sum_over_9
   end
+
+  def test_can_sum_array
+    credit = CreditCheck.new("4929735477250543")
+
+    assert_equal 80, credit.sum_array
+  end
+
+  def test_modulo_10_equal_0
+    credit = CreditCheck.new("4929735477250543")
+
+    assert_equal 0, credit.modulo
+  end
 end

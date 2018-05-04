@@ -3,7 +3,6 @@ class CreditCheck
 
   def initialize(card_number)
     @card_number = card_number.to_i.digits
-    # binding.pry
   end
 
   def double_every_other_digit
@@ -24,6 +23,14 @@ class CreditCheck
       number
     end
    end
+  end
+
+  def sum_array
+    sum = sum_over_9.sum
+  end
+
+  def modulo
+   sum_array % 10
   end
 
 end
