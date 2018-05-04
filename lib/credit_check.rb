@@ -29,7 +29,7 @@ class CreditCheck
     sum = sum_over_9.sum
   end
 
-  def modulo
+  def card_valid?
    sum_array % 10
   end
 
