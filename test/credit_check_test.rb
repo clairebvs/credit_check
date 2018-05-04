@@ -35,9 +35,18 @@ class CreditCheckTest < Minitest::Test
     assert_equal 80, credit.sum_array
   end
 
-  def test_modulo_10_equal_0_so_card_valid
+  def test_modulo_10_equal_0
     credit = CreditCheck.new("4929735477250543")
 
-    assert_equal 0, credit.card_valid?
+    assert_equal 0, credit.modulo
+  end
+
+  def test_card_is_valid
+    credit = CreditCheck.new("5541801923795240")
+    card_number = "5541801923795240"
+    assert credit.card_valid?(card_number)
+
+    # credit2 = CreditCheck.new("342804633855673")
+    # assert credit2.card_valid?
   end
 end
