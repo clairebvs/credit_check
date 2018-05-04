@@ -14,7 +14,16 @@ class CreditCheck
         card_number * 2
       end
     }
-    binding.pry
+  end
+
+  def sum_over_9
+    sum_over_9 = double_every_other_digit.map do |number|
+    if number > 9
+      number - 9
+    else
+      number
+    end
+   end
   end
 
 end

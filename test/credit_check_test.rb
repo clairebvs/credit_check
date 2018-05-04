@@ -20,6 +20,12 @@ class CreditCheckTest < Minitest::Test
   def test_can_double_every_other_digit
     credit = CreditCheck.new("4929735477250543")
 
-    assert_equal [3, 8, 5, 0, 5, 4, 7, 14, 4, 10, 3, 14, 9, 4, 9, 8], credit.double_every_other_digit 
+    assert_equal [3, 8, 5, 0, 5, 4, 7, 14, 4, 10, 3, 14, 9, 4, 9, 8], credit.double_every_other_digit
+  end
+
+  def test_sum_digit_over_nine
+    credit = CreditCheck.new("4929735477250543")
+
+    assert_equal [3, 8, 5, 0, 5, 4, 7, 5, 4, 1, 3, 5, 9, 4, 9, 8], credit.sum_over_9
   end
 end
