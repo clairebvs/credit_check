@@ -15,14 +15,14 @@ class CreditCheck
     }
   end
 
-  def sum_over_9(number)
-    sum_over_9 = double_every_other_digit(@card_number).map do |number|
-    if number > 9
-      number - 9
-    else
-      number
+  def sum_over_9(number_array)
+    number_array.map do |number|
+      if number > 9
+        number - 9
+      else
+        number
+      end
     end
-   end
   end
 
   def sum_array(array)

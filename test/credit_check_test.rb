@@ -20,20 +20,21 @@ class CreditCheckTest < Minitest::Test
   def test_can_double_every_other_digit
     credit = CreditCheck.new("4929735477250543")
 
-    assert_equal [3, 8, 5, 0, 5, 4, 7, 14, 4, 10, 3, 14, 9, 4, 9, 8], credit.double_every_other_digit(credit.card_number)
+    # assert_equal [3, 8, 5, 0, 5, 4, 7, 14, 4, 10, 3, 14, 9, 4, 9, 8], credit.double_every_other_digit(credit.card_number)
+    assert_equal [5, 4, 4, 12], credit.double_every_other_digit([5,2,4,6])
   end
 
   def test_sum_digit_over_nine
     credit = CreditCheck.new("4929735477250543")
-
-    assert_equal [3, 8, 5, 0, 5, 4, 7, 5, 4, 1, 3, 5, 9, 4, 9, 8], credit.sum_over_9(credit.double_every_other_digit(credit.card_number))
+    # assert_equal [3, 8, 5, 0, 5, 4, 7, 5, 4, 1, 3, 5, 9, 4, 9, 8], credit.sum_over_9(credit.double_every_other_digit(credit.card_number))
+    assert_equal [5, 4, 4, 3], credit.sum_over_9([5, 4, 4, 12])
   end
 
   def test_can_sum_array
-    skip
     credit = CreditCheck.new("4929735477250543")
 
-    assert_equal 80, credit.sum_array
+    # assert_equal 80, credit.sum_array(credit.sum_over_9(credit.card_number))
+    assert_equal 19, credit.sum_array([5, 4, 4, 6])
   end
 
   def test_card_valid_or_invalid
