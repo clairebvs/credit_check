@@ -32,7 +32,6 @@ class CreditCheckTest < Minitest::Test
 
   def test_can_sum_array
     credit = CreditCheck.new("4929735477250543")
-
     # assert_equal 80, credit.sum_array(credit.sum_over_9(credit.card_number))
     assert_equal 19, credit.sum_array([5, 4, 4, 6])
   end
