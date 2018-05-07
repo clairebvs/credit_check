@@ -31,8 +31,8 @@ class CreditCheck
 
   def card_valid?
     doubled = double_every_other_digit(@card_number)
-    sum9 = sum_over_9(doubled)
-    sum = sum_array(sum9)
+    sum_above_9 = sum_over_9(doubled)
+    sum = sum_array(sum_above_9)
     sum % 10 == 0
   end
 
